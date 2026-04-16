@@ -4,377 +4,220 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tradeleaks — Terms of Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --blue: #2a6dd9;
-      --blue-light: #6faeff;
-      --blue-dim: #1a3a6e;
-      --blue-glow: #3d8bff;
-      --white: #e8f0ff;
-      --dim: #7a9acc;
-      --bg: #020a14;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     html, body {
-      min-height: 100%;
-      background: var(--bg);
-      color: var(--white);
-      font-family: 'Share Tech Mono', monospace;
-      overflow-x: hidden;
+      background: #fff;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── STAR CANVAS ── */
-    #starfield {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* ── PAGE WRAPPER ── */
     .page {
-      position: relative;
-      z-index: 2;
-      max-width: 860px;
+      max-width: 740px;
       margin: 0 auto;
-      padding: 60px 32px 100px;
+      padding: 80px 40px 120px;
     }
 
-    /* ── HEADER ── */
-    header {
-      text-align: center;
-      margin-bottom: 60px;
+    /* ── TOP BAR ── */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111;
+      margin-bottom: 56px;
     }
 
-    .company-name {
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 900;
-      font-size: clamp(2rem, 6vw, 3.4rem);
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
       letter-spacing: 0.18em;
-      background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 50%, var(--blue) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 5s linear infinite;
-      background-size: 200% 200%;
-      margin-bottom: 28px;
-    }
-
-    @keyframes shimmer {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .divider {
-      width: 100%;
-      height: 1px;
-      margin: 0 0 28px;
-      background: linear-gradient(to right, transparent, var(--blue), transparent);
-      position: relative;
-    }
-
-    .divider::before {
-      content: '◆';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--bg);
-      color: var(--blue-light);
-      font-size: 10px;
-      padding: 0 8px;
-    }
-
-    .tos-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: clamp(0.75rem, 2vw, 0.95rem);
-      letter-spacing: 0.35em;
-      color: var(--dim);
       text-transform: uppercase;
+      color: #111;
     }
 
-    /* ── INTRO BANNER ── */
-    .intro-banner {
-      background: linear-gradient(135deg, rgba(42,109,217,0.08), rgba(42,109,217,0.02));
-      border: 1px solid rgba(42,109,217,0.3);
-      border-left: 3px solid var(--blue);
-      padding: 18px 22px;
-      margin-bottom: 44px;
-      font-size: 0.82rem;
-      line-height: 1.7;
-      color: var(--dim);
+    .doc-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
     }
 
-    .intro-banner strong {
-      color: var(--blue-light);
+    /* ── TITLE BLOCK ── */
+    .title-block {
+      margin-bottom: 52px;
     }
 
-    /* ── SECTIONS ── */
+    .title-block h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .title-block p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #555;
+      max-width: 580px;
+    }
+
+    /* ── DIVIDER ── */
+    .rule {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 52px 0;
+    }
+
+    /* ── SECTION ── */
     .section {
-      margin-bottom: 36px;
-      border: 1px solid rgba(42,109,217,0.1);
-      border-left: 2px solid rgba(42,109,217,0.4);
-      background: rgba(10,30,60,0.4);
-      padding: 22px 26px;
-      position: relative;
-      transition: border-color 0.3s, background 0.3s;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 24px;
+      margin-bottom: 48px;
     }
 
-    .section:hover {
-      border-left-color: var(--blue-glow);
-      background: rgba(42,109,217,0.07);
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: #bbb;
+      letter-spacing: 0.08em;
+      padding-top: 3px;
     }
 
-    .section-number {
-      position: absolute;
-      top: -10px;
-      left: 20px;
-      background: var(--bg);
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: var(--blue-light);
-      padding: 0 8px;
-    }
+    .section-content {}
 
     .section-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      color: var(--blue-light);
-      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      color: #111;
+      margin-bottom: 10px;
     }
 
     .section-body {
-      font-size: 0.82rem;
-      line-height: 1.85;
-      color: rgba(232,240,255,0.7);
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #444;
     }
 
     /* ── FOOTER ── */
     footer {
-      margin-top: 60px;
-      text-align: center;
+      margin-top: 80px;
+      padding-top: 28px;
+      border-top: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .footer-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(42,109,217,0.6), transparent);
-      margin-bottom: 28px;
-    }
-
-    .footer-badge {
-      display: inline-block;
-      border: 1px solid rgba(42,109,217,0.35);
-      padding: 10px 28px;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      color: var(--dim);
+    .footer-brand {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      color: #111;
     }
 
-    .footer-copy {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── GLOW ACCENT ── */
-    .glow-dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--blue-glow);
-      box-shadow: 0 0 6px var(--blue-glow), 0 0 12px var(--blue-glow);
-      margin: 0 6px;
-      vertical-align: middle;
-      animation: blink 2s ease-in-out infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.3; }
+    .footer-note {
+      font-size: 12px;
+      color: #bbb;
     }
   </style>
 </head>
 <body>
-
-  <!-- STAR CANVAS -->
-  <canvas id="starfield"></canvas>
-
   <div class="page">
 
-    <!-- HEADER -->
-    <header>
-      <div class="company-name">TRADELEAKS</div>
-      <div class="divider"></div>
-      <div class="tos-title"><span class="glow-dot"></span> Terms of Service <span class="glow-dot"></span></div>
-    </header>
-
-    <!-- INTRO -->
-    <div class="intro-banner">
-      <strong>LEGALLY BINDING AGREEMENT</strong> — By purchasing any product or service from Tradeleaks, you confirm that you have read, understood, and fully agreed to the following Terms of Service. These terms are effective immediately upon completed purchase.
+    <div class="topbar">
+      <span class="brand">Tradeleaks</span>
+      <span class="doc-label">Legal</span>
     </div>
 
-    <!-- SECTIONS -->
-
-    <div class="section">
-      <span class="section-number">01</span>
-      <div class="section-title">All Sales Are Final</div>
-      <div class="section-body">All purchases are final. Due to the digital nature of our products and services, no refunds, returns, or cancellations will be issued under any circumstances.</div>
+    <div class="title-block">
+      <h1>Terms of Service</h1>
+      <p>By purchasing any product or service from Tradeleaks, you confirm that you have read, understood, and fully agreed to the following terms. These terms are legally binding and effective immediately upon completed purchase.</p>
     </div>
 
+    <hr class="rule">
+
     <div class="section">
-      <span class="section-number">02</span>
-      <div class="section-title">Delivery of Service</div>
-      <div class="section-body">All products and services are considered delivered once access has been granted (e.g., Discord access, digital content, or account permissions). By completing a purchase, you acknowledge that you are receiving immediate access to digital goods.</div>
+      <span class="section-num">01</span>
+      <div class="section-content">
+        <div class="section-title">All Sales Are Final</div>
+        <div class="section-body">All purchases are final. Due to the digital nature of our products and services, no refunds, returns, or cancellations will be issued under any circumstances.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">03</span>
-      <div class="section-title">No Chargebacks or Payment Disputes</div>
-      <div class="section-body">By making a purchase, you agree not to initiate any chargebacks or payment disputes with your bank or payment provider. Any attempt to do so will be considered a violation of these Terms and may result in permanent termination of access.</div>
+      <span class="section-num">02</span>
+      <div class="section-content">
+        <div class="section-title">Delivery of Service</div>
+        <div class="section-body">All products and services are considered delivered once access has been granted (e.g., Discord access, digital content, or account permissions). By completing a purchase, you acknowledge that you are receiving immediate access to digital goods.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">04</span>
-      <div class="section-title">User Conduct &amp; Compliance</div>
-      <div class="section-body">Customers must follow all rules associated with the service, including any rules within Discord or related platforms. Failure to comply may result in suspension or termination without refund.</div>
+      <span class="section-num">03</span>
+      <div class="section-content">
+        <div class="section-title">No Chargebacks or Payment Disputes</div>
+        <div class="section-body">By making a purchase, you agree not to initiate any chargebacks or payment disputes with your bank or payment provider. Any attempt to do so will be considered a violation of these Terms and may result in permanent termination of access.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">05</span>
-      <div class="section-title">Strict No Reselling Policy</div>
-      <div class="section-body">Reselling, sharing, redistributing, or transferring any product, service, or access is strictly prohibited.</div>
+      <span class="section-num">04</span>
+      <div class="section-content">
+        <div class="section-title">User Conduct &amp; Compliance</div>
+        <div class="section-body">Customers must follow all rules associated with the service, including any rules within Discord or related platforms. Failure to comply may result in suspension or termination without refund.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">06</span>
-      <div class="section-title">Enforcement &amp; Termination</div>
-      <div class="section-body">If any suspicion of reselling, abuse, fraud, or violation of these Terms is detected, we reserve the right to immediately suspend or permanently ban your access without notice and without refund.</div>
+      <span class="section-num">05</span>
+      <div class="section-content">
+        <div class="section-title">Strict No Reselling Policy</div>
+        <div class="section-body">Reselling, sharing, redistributing, or transferring any product, service, or access is strictly prohibited.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">07</span>
-      <div class="section-title">Fraud Prevention</div>
-      <div class="section-body">We reserve the right to refuse service, cancel orders, or terminate access if we suspect fraudulent activity, unauthorized transactions, or misuse of our services.</div>
+      <span class="section-num">06</span>
+      <div class="section-content">
+        <div class="section-title">Enforcement &amp; Termination</div>
+        <div class="section-body">If any suspicion of reselling, abuse, fraud, or violation of these Terms is detected, we reserve the right to immediately suspend or permanently ban your access without notice and without refund.</div>
+      </div>
     </div>
 
     <div class="section">
-      <span class="section-number">08</span>
-      <div class="section-title">Agreement &amp; Acknowledgment</div>
-      <div class="section-body">By completing a purchase, you confirm that you have read, understood, and agreed to these Terms of Service. You also acknowledge that you waive any right to dispute charges on the basis of dissatisfaction after access has been granted.</div>
+      <span class="section-num">07</span>
+      <div class="section-content">
+        <div class="section-title">Fraud Prevention</div>
+        <div class="section-body">We reserve the right to refuse service, cancel orders, or terminate access if we suspect fraudulent activity, unauthorized transactions, or misuse of our services.</div>
+      </div>
     </div>
 
-    <!-- FOOTER -->
+    <div class="section">
+      <span class="section-num">08</span>
+      <div class="section-content">
+        <div class="section-title">Agreement &amp; Acknowledgment</div>
+        <div class="section-body">By completing a purchase, you confirm that you have read, understood, and agreed to these Terms of Service. You also acknowledge that you waive any right to dispute charges on the basis of dissatisfaction after access has been granted.</div>
+      </div>
+    </div>
+
     <footer>
-      <div class="footer-divider"></div>
-      <div class="footer-badge">© 2025 Tradeleaks — All Rights Reserved</div>
-      <div class="footer-copy">These terms constitute a legally binding agreement between you and Tradeleaks.</div>
+      <span class="footer-brand">Tradeleaks</span>
+      <span class="footer-note">© 2025 Tradeleaks. All rights reserved.</span>
     </footer>
 
   </div>
-
-  <!-- STARFIELD SCRIPT -->
-  <script>
-    const canvas = document.getElementById('starfield');
-    const ctx = canvas.getContext('2d');
-    let W, H, stars = [], shooters = [];
-
-    function resize() {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-
-    function mkStar() {
-      return {
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 1.4 + 0.2,
-        a: Math.random(),
-        da: (Math.random() * 0.005 + 0.001) * (Math.random() < 0.5 ? 1 : -1),
-        speed: Math.random() * 0.08 + 0.01,
-      };
-    }
-
-    function mkShooter() {
-      const angle = (Math.random() * 30 + 15) * Math.PI / 180;
-      return {
-        x: Math.random() * W * 0.7,
-        y: Math.random() * H * 0.4,
-        vx: Math.cos(angle) * (6 + Math.random() * 6),
-        vy: Math.sin(angle) * (6 + Math.random() * 6),
-        life: 1,
-        decay: 0.018 + Math.random() * 0.012,
-        len: 80 + Math.random() * 80,
-      };
-    }
-
-    function init() {
-      resize();
-      stars = Array.from({ length: 260 }, mkStar);
-      setInterval(() => {
-        if (shooters.length < 3) shooters.push(mkShooter());
-      }, 1800);
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-
-      // Stars
-      for (const s of stars) {
-        s.a += s.da;
-        if (s.a <= 0 || s.a >= 1) s.da *= -1;
-        s.y += s.speed;
-        if (s.y > H) { s.y = 0; s.x = Math.random() * W; }
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${s.a})`;
-        ctx.fill();
-      }
-
-      // Blue accent stars
-      for (let i = 0; i < 18; i++) {
-        const s = stars[i];
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r * 0.8, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(61,139,255,${s.a * 0.6})`;
-        ctx.fill();
-      }
-
-      // Shooting stars
-      shooters = shooters.filter(s => s.life > 0);
-      for (const s of shooters) {
-        const grad = ctx.createLinearGradient(s.x, s.y, s.x - s.vx * s.len / 10, s.y - s.vy * s.len / 10);
-        grad.addColorStop(0, `rgba(180,210,255,${s.life})`);
-        grad.addColorStop(1, 'rgba(255,255,255,0)');
-        ctx.beginPath();
-        ctx.moveTo(s.x, s.y);
-        ctx.lineTo(s.x - s.vx * s.len / 10, s.y - s.vy * s.len / 10);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-        s.x += s.vx;
-        s.y += s.vy;
-        s.life -= s.decay;
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('resize', resize);
-    init();
-    draw();
-  </script>
-
 </body>
 </html>
